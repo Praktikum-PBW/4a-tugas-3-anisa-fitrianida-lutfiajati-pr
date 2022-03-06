@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Deret Fibonacci</title>
+        <link href="<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            *{
+                font-family: 'Poppins', sans-serif;
+                color: #0b351c;
+            }
+
+            fieldset{
+                background-color: #adebc9;
+                margin:300px auto;
+                border-radius: 10px;
+                width: 400px;
+                height: 300px   
+            }
+            .header {
+                color:rgb(6, 49, 15);
+                margin: 30px;
+                font-size: 30px;
+                font-weight: bolder;
+            }
+            
+            .fieldtext{
+                margin-left: 30px;
+                outline: none;
+                height: 30px;
+                width: 320px;
+                padding: 10px;
+                border: none;
+                border-bottom: 3px solid rgb(6, 49, 15);
+                background: transparent;
+                font-size: 25px;
+                text-align: center;
+                font-weight: bold;
+                color: #1f693d;
+            }
+
+            .btn {
+                background-color: #0e5c2f;
+                width: 300px;
+                height: 50px;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                padding: 10px 32px;
+                text-align: center;
+                font-size: 20px;
+                font-weight: 600;
+                margin: 50px 40px 45px 50px;
+                opacity: 0.6;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+
+            .btn:hover {
+                background-color: rgb(11, 36, 10);
+                color: white;
+            }
+
+            .btn:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+
+        </style>
+    </head>
+    <body>
+        <fieldset>
+        <form name="fibo" id="first">  
+            <legend class="header" align="center">DERET FIBONACCI</legend>
+
+            <input class="fieldtext" type="number" id="row" placeholder="Masukan Jumlah Deret">
+
+            <input class="btn" type="button" value="Show"  onclick="fibonacci()">
+        </form>
+    </fieldset>
+    <script>
+    function fibonacci(){
+        let row = parseFloat(document.fibo.row.value);
+        let a = 0, b = 1, next;
+        document.write('<style>*{font-size:30px; text-align:center;} fieldset{width:420px; height:auto; font-family: Poppins; color:rgb(6, 49, 15); background-color: #adebc9; margin:300px auto; border-radius: 10px;} .bt{background-color: #0e5c2f;width: 300px;height: 50px; border: none; border-radius: 5px;  color: white; padding: 10px 32px; text-align: center;font-size: 20px; font-weight: 600; opacity: 0.6;transition: 0.3s;cursor: pointer;}</style>') //Style CSS
+
+        document.write('<fieldset>')
+        document.write('<p style="margin:30px;"><b> Deret Fibonacci:<br></b></p>')
+
+        for (let i = 1; i <= row; i++) {
+            document.write(a+"<br>")
+            console.log(a)
+            next = a + b;
+            a = b;
+            b = next;
+        }
+        document.write('<br><input class="bt" type="button" value="Back" onclick="window.location.reload();">')   
+        document.write('</fieldset>')
+    }
+    </script>
+    </body>
+</html>
